@@ -1,7 +1,7 @@
 <h2>Contact us</h2>
 
 
-<%= form_for :contact, url: contacts_path do |f| %>
+<%= form_for :contact, url: contacts_path, local: true, data: { turbo: false } do |f| %>
   <p>
     <%= f.label :email %><br/>
     <%= f.text_field :email %>
@@ -11,6 +11,6 @@
     <%= f.text_area :message %>
   </p>
   <p>
-    <%= f.submit 'Send message' %>
+    <%= f.submit 'Send message', data: { disable_with: false } %>
   </p>
 <% end %>
