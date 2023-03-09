@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
     if @contact.valid?
       @contact.save
     else
+      @contact.errors.full_messages
       render action: 'new'
     end
   end
