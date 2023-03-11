@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :find_article, only: [:edit, :show, :update, :destroy]
+
   def new
   end
 
@@ -12,12 +14,30 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @list = Article.order "created_at DESC"
+    @articles = Article.order "created_at DESC"
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
   end
 
   private
 
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  def find_article
+    @article = Article.find(params[:id])
   end
 end

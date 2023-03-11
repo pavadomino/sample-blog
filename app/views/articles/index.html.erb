@@ -1,9 +1,9 @@
-<h1>Articles</h1>
+<h1>Article list:</h1>
 <br/>
 
-<% @list.each do |art| %>
+<% @articles.each do |art| %>
   <h3>
-    <%= art['title'] %>
+    Article name: <%= art['title'] %>
   </h3>
   <p><%= art['text'] %></p>
   <span style="font-size: 75%; color: #999"> Created at <%= art['created_at'] %></span>
