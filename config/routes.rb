@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resource :terms, only: [:show]
   resources :articles
-  resource :contacts, only: [:new, :create], path_names: { :new => '' }
+  resource :contacts, only: [:new, :create]#, path_names: { :new => '' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

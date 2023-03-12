@@ -1,3 +1,10 @@
+<% if flash.any? %>
+<% flash.each do |type, msg| %>
+<div class="alert alert-<%= type %>">
+<%= msg %>
+</div>
+<% end %>
+<% end %>
 <h1>List of articles:</h1>
 <br/>
 
@@ -11,6 +18,8 @@
   <%= link_to 'Show article', article_path(art)%>
   <%= link_to 'Edit article', edit_article_path(art)%>
   <br/>
+  <br/>
+  <%= button_to "delete", art, method: :delete %>
   <br/>
   <hr/>
 <% end %>

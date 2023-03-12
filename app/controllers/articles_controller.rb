@@ -31,6 +31,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    if @article.destroy
+      redirect_to :articles, success: "The article item was successfully destroyed."
+    else
+      render action: 'new'
+    end
+  end
+
   private
 
   def article_params
