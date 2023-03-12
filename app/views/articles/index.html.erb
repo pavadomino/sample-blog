@@ -1,12 +1,15 @@
-<h1>Article list:</h1>
+<h1>List of articles:</h1>
 <br/>
 
 <% @articles.each do |art| %>
   <h3>
-    Article name: <%= art['title'] %>
+    Article name: <%= art.title %>
   </h3>
-  <p><%= art['text'] %></p>
+  <p><%= art.text %></p>
   <span style="font-size: 75%; color: #999"> Created at <%= art['created_at'] %></span>
+  <br/>
+  <%= link_to 'Show article', article_path(art)%>
+  <%= link_to 'Edit article', edit_article_path(art)%>
   <br/>
   <br/>
   <hr/>
