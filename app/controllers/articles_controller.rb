@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.order "created_at DESC"
+    @articles = Article.order 'created_at DESC'
   end
 
   def show
@@ -33,9 +33,9 @@ class ArticlesController < ApplicationController
 
   def destroy
     if @article.destroy
-      redirect_to :articles, success: "The article item was successfully destroyed."
+      redirect_to articles_path, success: 'The article item was successfully destroyed.'
     else
-      render action: 'new'
+      render action: 'new', danger: 'Error during deletion!'
     end
   end
 

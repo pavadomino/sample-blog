@@ -15,11 +15,11 @@
   <p><%= art.text %></p>
   <span style="font-size: 75%; color: #999"> Created at <%= art['created_at'] %></span>
   <br/>
-  <%= link_to 'Show article', article_path(art)%>
+  <%= link_to 'Show article', article_path(art)%> |
   <%= link_to 'Edit article', edit_article_path(art)%>
   <br/>
   <br/>
-  <%= button_to "delete", art, method: :delete %>
+  <%= button_to 'Delete', article_path(art), method: :delete, data: { turbo_confirm: 'Are you sure?' } %>
   <br/>
   <hr/>
 <% end %>
