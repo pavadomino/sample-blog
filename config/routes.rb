@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get '/about' => 'about#show'
 
   resource :terms, only: [:show]
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   resource :contacts, only: [:new, :create]#, path_names: { :new => '' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
