@@ -31,8 +31,10 @@
       </div>
       <div class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <%= current_user.username %> |
-          <%= link_to 'Sign-out', destroy_user_session_path, data: { "turbo-method": :delete } %>
+          <span class="navbar-text text-light">
+          Username: <%= current_user.username %> |
+          </span>
+          <%= link_to 'Sign-out', destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-link" %>
         <% else %>
           <%= link_to 'Sign_In', new_user_session_path %>
         <% end %>
