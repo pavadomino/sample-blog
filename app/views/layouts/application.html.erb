@@ -11,8 +11,9 @@
   </head>
 
   <body>
-  <div class="d-flex flex-wrap align-items-center justify-content-lg-centre">
+    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
       <a class="navbar-brand" href="/articles">Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,28 +39,29 @@
           <span class="navbar-text text-light">
           Username: <%= current_user.username %> |
           </span>
-          <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: "btn btn-light text-dard me-2" %>
+          <%= button_to 'Sign-out', destroy_user_session_path, method: :delete, class: "btn btn-danger text-dard me-2" %>
         <% else %>
           <%= button_to 'Login', new_user_session_path, method: :get, class: "btn btn-light text-dark me-2" %>
           <%= button_to 'Sign-up', new_user_registration_path, method: :get, class: "btn btn-primary" %>
         <% end %>
       </div>
+      </div>
     </nav>
-    </div>
     <!-- Old sign-in sign-out links
       <a href="/users/sign_in">Sign In</a> | <a href="/users/sign_out" data-turbo-method="delete">Sign-out</a>
 --> 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice1"><%= notice %></p>
+    <p class="alert1"><%= alert %></p>
     <%= yield %>
+    </div>
   </body>
 </html>
 
 <style type="text/css">
-  .notice{
+  .notice1{
     color: green;
   }
-  .alert{
+  .alert1{
     color: red;
   }
 </style>
