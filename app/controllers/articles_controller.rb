@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :find_article, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :show]
+  before_action :find_article, only: [:show]
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   def new
   end
@@ -48,5 +49,12 @@ class ArticlesController < ApplicationController
 
   def find_article
     @article = Article.find(params[:id])
+  end
+
+  def authorize
+    @article = Article.find(params[:id])
+    unless current_user['username'] == @article['author']
+      redirect_to(articles_path, danger: "You cannot edit/remove this article") and return
+    end
   end
 end
