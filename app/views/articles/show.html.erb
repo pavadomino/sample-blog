@@ -1,5 +1,3 @@
-<div class="offset-sm-2">
-<div class="col-sm-10">
 <h3>Article name: <%= @article.title %></h3>
 <p><%= @article.text %></p>
 <span style="font-size: 75%; color: #999"> Created at <%= @article['created_at'] %></span>
@@ -10,9 +8,8 @@
   <span style="font-size: 75%; color: #999"> Comment created by <%= comment.author %> at <%= comment.created_at %></span>
   <hr/>
 <%end%>
-</div>
 <%= form_for([@article, @article.comments.build]) do |f| %>
-  <div class="form-group col-sm-10"> Username: 
+  <div> Username: 
     <% if user_signed_in? %>
       <%= current_user.username %>
       <%= f.hidden_field :author, value: current_user.username %><br/>
@@ -27,4 +24,3 @@
 
 <% end %>
 </p>
-</div>

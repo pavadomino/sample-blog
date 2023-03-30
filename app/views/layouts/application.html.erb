@@ -50,9 +50,15 @@
     <!-- Old sign-in sign-out links
       <a href="/users/sign_in">Sign In</a> | <a href="/users/sign_out" data-turbo-method="delete">Sign-out</a>
 --> 
-    <p class="notice1"><%= notice %></p>
-    <p class="alert1"><%= alert %></p>
+    <div class="offset-sm-2 col-sm-8">
+    <% if notice then %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert then %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
+    </div>
     </div>
   </body>
 </html>

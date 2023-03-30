@@ -1,4 +1,3 @@
-<div class="offset-sm-2 col-sm-8">
 <% if flash.any? %>
 <% flash.each do |type, msg| %>
 <div class="alert alert-<%= type %>">
@@ -8,7 +7,6 @@
 <% end %>
 <h1>List of articles:</h1>
 <br/>
-
 <% @articles.each do |art| %>
   <h3>
     Article name: <%= art.title %>
@@ -17,11 +15,8 @@
   <span style="font-size: 75%; color: #999"> Created at <%= art['created_at'] %></span>
   <br/>
   <%= link_to 'Show article', article_path(art)%> |
-  <%= link_to 'Edit article', edit_article_path(art)%>
-  <br/>
-  <br/>
-  <%= button_to 'Delete', article_path(art), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <%= link_to 'Edit article', edit_article_path(art)%> |
+  <%= link_to 'Delete', article_path(art), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   <br/>
   <hr/>
 <% end %>
-</div>
