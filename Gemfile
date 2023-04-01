@@ -61,6 +61,7 @@ group :development, :test do
   gem "capybara"
   gem 'rspec-rails', '~> 6.0.0'
   gem "shoulda-matchers",'~> 5.0'
+  gem 'factory_girl_rails', '~> 4.9'
 end
 
 group :development do
