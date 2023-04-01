@@ -1,6 +1,6 @@
 require 'shoulda/matchers'
 require 'rspec/rails'
-require 'support/factory_girl'
+require 'factory_bot'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

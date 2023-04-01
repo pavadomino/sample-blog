@@ -19,4 +19,9 @@ RSpec.describe Article, type: :model do
       expect(article.subject).to eq 'Lorem Ipsum'
     end
   end
+
+  describe "#last_comment" do
+    it "returns last comment" do
+    end
+  end
 end
