@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
   has_many :comments, :dependent => :destroy
-  validates :title, presence: true
-  validates :text, presence: true
+  validates :title, presence: true, length: { minimum: 140 }
+  validates :text, presence: true, length: { minimum: 4000 }
 
   def subject
     title
