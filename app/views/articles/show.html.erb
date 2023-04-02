@@ -1,3 +1,13 @@
+<% if flash[:comment_errors] %>
+<div class="alert alert-warning">
+  <h3>The following errors prevented the comment from being saved:</h3>
+  <ul>
+    <% flash[:comment_errors].each do |msg| %>
+     <li><%= msg %></li> 
+    <% end %>
+  </ul>
+</div>
+<% end %>
 <h3>Article name: <%= @article.title %></h3>
 <p><%= @article.text %></p>
 <span style="font-size: 75%; color: #999"> Created at <%= @article['created_at'] %> by <%= @article['author']%></span>
