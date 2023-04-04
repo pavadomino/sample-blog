@@ -11,13 +11,8 @@ feature "Article Creation" do
   end
 
   scenario "allows user to create new article" do
-    visit new_article_path
-    title = "Article title" * 20
+    create_article
 
-    fill_in :article_title, with: title
-    fill_in :article_text, with: "Article text " * 410
-
-    click_button "Save article"
     expect(page).to have_content I18n.t('article.created_article')
   end
 end

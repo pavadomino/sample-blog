@@ -12,13 +12,13 @@ RSpec.describe Article, type: :model do
     it { should have_many :comments }
   end
 
-j describe "#subject" do
+  describe "#subject" do
     it "returns the article title" do
       # create article object
-      article = create(:article, title: 'Lorem Ipsum')
+      article = create(:article, title: 'Lorem Ipsum' * 20)
 
       # assert, проверка
-      expect(article.subject).to eq 'Lorem Ipsum'
+      expect(article.subject).to eq 'Lorem Ipsum' * 20
     end
   end
 
