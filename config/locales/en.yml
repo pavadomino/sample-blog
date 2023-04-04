@@ -30,6 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  thanks: "Thanks!"
   hello: "Hello world"
   contacts:
     contact_us: 'Contact Us!'
+  article:
+    new_article: 'New article'
+    created_article: 'Thank you! Your article was created'
